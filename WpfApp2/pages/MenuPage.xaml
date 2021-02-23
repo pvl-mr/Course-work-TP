@@ -1,0 +1,35 @@
+﻿<Page x:Class="WpfApp2.pages.MenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MenuPage" FontFamily="Calibri Light" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Button x:Name="b1" Grid.Column="0" Command="{Binding bVisit_clik}" Click="b1_Click" Content="Запись на услуги" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+            <Button x:Name="b2" Grid.Column="1" Command="{Binding bMyPets_clik}" Click="b2_Click" Content="Мои питомцы" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+            <Button x:Name="b3" Grid.Column="2" Command="{Binding bPofig_clik}" Click="b3_Click" Content="Прививки" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+            <Button x:Name="b4" Grid.Column="3" Command="{Binding bReport1_clik}" Click="b4_Click" Content="Отчет по услугам" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+            <Button x:Name="b5" Grid.Column="4" Command="{Binding bReport2_clik}" Click="b5_Click" Content="Отчет за периуд" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Frame x:Name="frame" Content="{Binding CurrentPage, Mode=OneWay}" NavigationUIVisibility="Hidden"/>
+        </Grid>
+    </Grid>
+</Page>

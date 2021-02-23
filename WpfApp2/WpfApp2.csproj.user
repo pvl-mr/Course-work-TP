@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="pages\AuthorizationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\MenuPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\PetsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\RegistrationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\Report1Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\Report2Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\UpdatePet.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\UpdateVisitPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\VaccinationsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\VaccinUpdatePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\VisitPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\AuthorizationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\PetsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\Report1Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\Report2Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\UpdatePet.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\UpdateVisitPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\VaccinationsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\VaccinUpdatePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\VisitPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
