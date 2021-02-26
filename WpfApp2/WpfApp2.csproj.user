@@ -16,6 +16,9 @@
     <Compile Update="pages\PetsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="pages\PetToVisitPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="pages\RegistrationPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\PetsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\PetToVisitPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="pages\RegistrationPage.xaml">

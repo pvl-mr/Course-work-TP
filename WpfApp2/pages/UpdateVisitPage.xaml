@@ -21,7 +21,7 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Запись на прием" FontSize="24" Margin="0 30 0 0" TextAlignment="Center" FontWeight="Bold" ></TextBlock>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
             <TextBox  Text="Время" Background="#fafafa" Style="{DynamicResource TextBoxStyle1}"/>
-            <TextBox  Text="Питомец" Background="#fafafa" Style="{StaticResource TextBoxStyle1}"/>
+            <TextBox  Text="телефон" Background="#fafafa" Style="{StaticResource TextBoxStyle1}"/>
             <TextBox  Text="Оставьте комментарий" Height=" 60" Style="{StaticResource TextBoxStyle1}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="10" >

@@ -19,6 +19,7 @@
         <StackPanel Grid.Row="0" Grid.Column="1">
             <Button Content="Записаться" Height="45" Margin="10 30 10 10" Background="#FFFFDCB1" Style="{StaticResource ButtonStyle1}"/>
             <Button Content="Редактировать" Height="45" Margin="10" Background="#FFFFDCB1" Style="{StaticResource ButtonStyle1}"/>
+            <Button Content="Выбрать питомца" Margin="10" Height="45" Background="#FFFFDCB1" Style="{StaticResource ButtonStyle1}"/>
             <Button Content="Удалить" Margin="10" Height="45" Background="#FFFFDCB1" Style="{StaticResource ButtonStyle1}"/>
         </StackPanel>
 

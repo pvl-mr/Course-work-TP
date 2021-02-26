@@ -40,3 +40,5 @@ D:\VSP\WpfApp2\WpfApp2\obj\Debug\netcoreapp3.1\pages\VaccinationsPage.g.cs
 D:\VSP\WpfApp2\WpfApp2\obj\Debug\netcoreapp3.1\pages\VaccinUpdatePage.g.cs
 D:\VSP\WpfApp2\WpfApp2\obj\Debug\netcoreapp3.1\pages\VaccinationsPage.baml
 D:\VSP\WpfApp2\WpfApp2\obj\Debug\netcoreapp3.1\pages\VaccinUpdatePage.baml
+D:\VSP\WpfApp2\WpfApp2\obj\Debug\netcoreapp3.1\pages\PetToVisitPage.g.cs
+D:\VSP\WpfApp2\WpfApp2\obj\Debug\netcoreapp3.1\pages\PetToVisitPage.baml

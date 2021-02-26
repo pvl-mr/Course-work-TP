@@ -16,7 +16,7 @@ namespace WpfApp2.ViewModel
         public Page vaccinPage { get; }
         public Page report1Page { get; }
         public Page report2Page { get; }
-
+        
         public MenuViewModel()
         {
             visitPage = new VisitPage();

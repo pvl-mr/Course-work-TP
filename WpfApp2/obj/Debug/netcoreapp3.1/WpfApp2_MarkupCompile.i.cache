@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 D:\VSP\WpfApp2\WpfApp2\App.xaml
-12-2008033001
+13668914283
 
-23127809462
+24-1668273251
 1921654412462
-MainWindow.xaml;pages\AuthorizationPage.xaml;pages\MenuPage.xaml;pages\PetsPage.xaml;pages\RegistrationPage.xaml;pages\Report1Page.xaml;pages\Report2Page.xaml;pages\UpdatePet.xaml;pages\UpdateVisitPage.xaml;pages\VaccinationsPage.xaml;pages\VaccinUpdatePage.xaml;pages\VisitPage.xaml;
+MainWindow.xaml;pages\AuthorizationPage.xaml;pages\MenuPage.xaml;pages\PetsPage.xaml;pages\PetToVisitPage.xaml;pages\RegistrationPage.xaml;pages\Report1Page.xaml;pages\Report2Page.xaml;pages\UpdatePet.xaml;pages\UpdateVisitPage.xaml;pages\VaccinationsPage.xaml;pages\VaccinUpdatePage.xaml;pages\VisitPage.xaml;
 
-False
+True
 

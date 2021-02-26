@@ -11,11 +11,12 @@ namespace WpfApp2.ViewModel
         public Page CurrentPage { get; set; }
 
         private Page updateVisitPage;
-
+        private Page petToVisitPage;
         public VisitViewModel()
         {
+            petToVisitPage = new PetToVisitPage();
             updateVisitPage = new UpdateVisitPage();
-            CurrentPage = updateVisitPage;
+            CurrentPage = petToVisitPage;
         }
     }
 }
