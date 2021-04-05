@@ -9,9 +9,9 @@ namespace VetclinicStorage.Models
     {
         public Doctor()
         {
-            this.Service = new HashSet<Service>();
-            this.Recommendation = new HashSet<Recommendation>();
-            this.MedicinesDinamic = new HashSet<MedicinesDinamic>();
+            this.Services = new HashSet<Service>();
+            this.Recommendations = new HashSet<Recommendation>();
+            this.MedicinesDinamics = new HashSet<MedicinesDinamic>();
         }
         [Key]
         public int Id { get; set; }
@@ -23,10 +23,10 @@ namespace VetclinicStorage.Models
         [Required] public string Post { get; set; }
 
         [ForeignKey("DoctorId")]
-        public virtual ICollection<Service> Service { get; set; }
+        public virtual ICollection<Service> Services { get; set; }
         [ForeignKey("DoctorId")]
-        public virtual ICollection<Recommendation> Recommendation { get; set; }
+        public virtual ICollection<Recommendation> Recommendations { get; set; }
         [ForeignKey("DoctorId")]
-        public virtual ICollection<MedicinesDinamic> MedicinesDinamic { get; set; }
+        public virtual ICollection<MedicinesDinamic> MedicinesDinamics { get; set; }
     }
 }

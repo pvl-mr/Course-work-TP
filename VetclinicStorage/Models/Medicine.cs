@@ -9,17 +9,17 @@ namespace VetclinicStorage.Models
     {
         public Medicine()
         {
-            this.MedicinesDinamic = new HashSet<MedicinesDinamic>();
-            this.ServiceMedicine = new HashSet<ServiceMedicine>();
+            this.MedicinesDinamics = new HashSet<MedicinesDinamic>();
+            this.ServiceMedicines = new HashSet<ServiceMedicine>();
         }
         [Key]
-        [Required] public int Id { get; set; }
+        public int Id { get; set; }
         [Required] public string Name { get; set; }
         [Required] public string Description { get; set; }
 
         [ForeignKey("MedicineId")]
-        public virtual ICollection<MedicinesDinamic> MedicinesDinamic { get; set; }
+        public virtual ICollection<MedicinesDinamic> MedicinesDinamics { get; set; }
         [ForeignKey("MedicineId")]
-        public virtual ICollection<ServiceMedicine> ServiceMedicine { get; set; }
+        public virtual ICollection<ServiceMedicine> ServiceMedicines { get; set; }
     }
 }

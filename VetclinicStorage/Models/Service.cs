@@ -9,9 +9,9 @@ namespace VetclinicStorage.Models
     {
         public Service()
         {
-            this.Recommendation = new HashSet<Recommendation>();
-            this.ServiceMedicine = new HashSet<ServiceMedicine>();
-            this.VisitService = new HashSet<VisitService>();
+            this.Recommendations = new HashSet<Recommendation>();
+            this.ServiceMedicines = new HashSet<ServiceMedicine>();
+            this.VisitServices = new HashSet<VisitService>();
         }
         [Key]
         public int Id { get; set; }
@@ -21,10 +21,10 @@ namespace VetclinicStorage.Models
 
         public virtual Doctor Doctor { get; set; }
         [ForeignKey("ServiceId")]
-        public virtual ICollection<Recommendation> Recommendation { get; set; }
+        public virtual ICollection<Recommendation> Recommendations { get; set; }
         [ForeignKey("ServiceId")]
-        public virtual ICollection<ServiceMedicine> ServiceMedicine { get; set; }
+        public virtual ICollection<ServiceMedicine> ServiceMedicines { get; set; }
         [ForeignKey("ServiceId")]
-        public virtual ICollection<VisitService> VisitService { get; set; }
+        public virtual ICollection<VisitService> VisitServices { get; set; }
     }
 }
