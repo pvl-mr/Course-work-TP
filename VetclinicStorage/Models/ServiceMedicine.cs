@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VetclinicStorage.Models
 {
-    class ServiceMedicine
+    public class ServiceMedicine
     {
         public int ServiceId { get; set; }
         public int MedicineId { get; set; }

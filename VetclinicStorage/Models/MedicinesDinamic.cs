@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VetclinicStorage.Models
 {
-    class MedicinesDinamic
+    public class MedicinesDinamic
     {
         [Key]
         public int Id { get; set; }

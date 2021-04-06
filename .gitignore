@@ -5,6 +5,8 @@
 
 
 VetclinicDbContext.cs
+VetclinicStorage.csproj
+AibolitVeterinaryClinic.sln 
 
 # User-specific files
 *.rsuser
