@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VetclinicStorage.Models
 {
-    class Client
+    public class Client
     {
         public Client()
         {

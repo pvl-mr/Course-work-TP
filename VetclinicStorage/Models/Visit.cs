@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VetclinicStorage.Models
 {
-    class Visit
+    public class Visit
     {
         public Visit()
         {

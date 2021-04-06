@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VetclinicStorage.Models
 {
-    class Vaccination
+    public class Vaccination
     {
         [Key]
         public int Id { get; set; }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VetclinicStorage.Models
 {
-    class VisitAnimal
+    public class VisitAnimal
     {
         public int VisitId { get; set; }
         public int AnimalId { get; set; }
