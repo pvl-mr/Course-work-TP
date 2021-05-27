@@ -4,9 +4,40 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmployeeApplicationView"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+       Title="Ветклиника 'Айнеболит' " FontFamily="Calibri Light" Icon="res/ico.png">
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="bServises" Grid.Column="0" Click="bServises_Click" Content="Услуги" BorderThickness="1" Style="{StaticResource ButtonStyle2}" Grid.ColumnSpan="2" Height="40" Margin="0,0,152.664,-0.064" VerticalAlignment="Top"/>
+            <Button x:Name="bMedicines" Grid.Column="1" Click="bMedicines_Click" Content="Медикаменты" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+            <Button x:Name="bRecommendetions" Grid.Column="2" Click="bRecommendetions_Click" Content="Рекомендации"  BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+            <Button x:Name="bReportServises" Grid.Column="3" Click="bReportServises_Click" Content="Отчет по услугам" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+            <Button x:Name="bReportMedicines" Grid.Column="4" Click="bReportMedicines_Click" Content="Отчет по медикаментам" FontSize="16" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+            <Button x:Name="bCharts" Grid.Column="5" Click="bCharts_Click" Content="Статистика" FontSize="16" BorderThickness="1" Style="{StaticResource ButtonStyle2}"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Rectangle>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFBF8F2" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Image x:Name="iLogo" Source="res/logo.png" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="500" />
+            <Frame x:Name="frame" NavigationUIVisibility="Hidden"/>
+        </Grid>
     </Grid>
 </Window>

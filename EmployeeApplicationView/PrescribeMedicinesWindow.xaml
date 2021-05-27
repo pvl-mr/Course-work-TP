@@ -1,0 +1,34 @@
+﻿<Window x:Class="EmployeeApplicationView.PrescribeMedicinesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeApplicationView"
+         mc:Ignorable="d" 
+      Title="Выписать медикаменты" FontFamily="Calibri Light" Width="350" Height="450" Loaded="Window_Loaded"  Icon="res/ico.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+            <Label Content="Укажите питомца" Margin="10 0 0 0" FontSize="14"/>
+            <ComboBox Name="cbPets"  Margin="10"  Height="32" FontSize="14" Background="#FFFFDCB1"/>
+            <DataGrid x:Name="dgMedicines" Margin="10" Height="140" AutoGenerateColumns="False" FontSize="14" CanUserReorderColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Выбранные медикаменты" FontSize="14" Binding="{Binding Path=Name}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBox x:Name="tbCount" Text="Количество" Style="{StaticResource TextBoxStyle1}" FontSize="14" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="bAdd" Click="bAdd_Click" Grid.Column="0" Content="Подтвердить" Margin="10" Height="45" Background="#FFFFDCB1" Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="dCancel" Click="dCancel_Click" Grid.Column="1" Content="Отмена" Margin="10" Height="45" BorderThickness="1" Style="{StaticResource ButtonStyle1}" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

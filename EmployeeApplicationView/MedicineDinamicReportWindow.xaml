@@ -1,0 +1,23 @@
+﻿<Window x:Class="EmployeeApplicationView.MedicineDinamicReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeApplicationView"
+        mc:Ignorable="d"
+        Title="Выписаные медикаменты" Height="450" Width="800" Loaded="Window_Loaded"  Icon="res/ico.png">
+    <Grid>
+        <DataGrid x:Name="dgMedicines" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Path=Date}" Width="3*"/>
+                <DataGridTextColumn Header="Медикамента" Binding="{Binding Path=MedicineName}" Width="2*"/>
+                <DataGridTextColumn Header="К-во" Binding="{Binding Path=Count}" Width="*"/>
+                <DataGridTextColumn Header="Выписал: имя" Binding="{Binding Path=DoctorFirstName}" Width="3*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=DoctorLastName}" Width="3*"/>
+                <DataGridTextColumn Header="Кому: вид" Binding="{Binding Path=AnimalType}" Width="2*"/>
+                <DataGridTextColumn Header="Порода" Binding="{Binding Path=AnimalBreed}" Width="2*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Path=AnimalName}" Width="3*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
