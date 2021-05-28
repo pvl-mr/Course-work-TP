@@ -115,6 +115,9 @@
     <Compile Include="pages\UseOfMedicinePage.xaml.cs">
       <DependentUpon>UseOfMedicinePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\UseOfSomethingPage.xaml.cs">
+      <DependentUpon>UseOfSomethingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrescribeMedicinesWindow.xaml.cs">
       <DependentUpon>PrescribeMedicinesWindow.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\UseOfMedicinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\UseOfSomethingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

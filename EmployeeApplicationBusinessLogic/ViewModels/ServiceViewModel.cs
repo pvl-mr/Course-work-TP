@@ -15,5 +15,6 @@ namespace EmployeeApplicationBusinessLogic.ViewModels
         public int DoctorId { get; set; }// &?
 
         public virtual Dictionary<int, (string name, string description)> Medicines { get; set; }// &? Нужно.
+        public List<int> VisitsId { get; set; }
     }
 }

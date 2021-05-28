@@ -20,8 +20,8 @@ namespace VetclinicStorage.Storages
                 Id = m.Id,
                 Date = m.Date,
                 Comment = m.Comment,
-                Animals = m.VisitAnimals.ToDictionary(va => va.AnimalId, va => (va.Animal.Name, va.Animal.Breed)),
-                Services = m.VisitServices.ToDictionary(vs => vs.ServiceId, vs => (vs.Service.Name, vs.Service.Description)),
+                Animals = m.VisitAnimals.ToDictionary(va => va.AnimalId, va => (va.Animal.Name, va.Animal.Breed, va.Animal.Type)),
+                Services = m.VisitServices.ToDictionary(vs => vs.ServiceId, vs => (vs.Service.Name, vs.Service.Description, vs.Service.DoctorId)),
                 ClientId = m.ClientId
             };
         }
@@ -41,9 +41,13 @@ namespace VetclinicStorage.Storages
 
         protected override List<VisitViewModel> GetFilteredList(VisitBindingModel binding, VetclinicDbContext context)
         {
-            return context.Visits.Where(v => true)
+            return context.Visits
                 .Include(v => v.VisitServices).ThenInclude(vs => vs.Service)
                 .Include(v => v.VisitAnimals).ThenInclude(va => va.Animal)
+                .Where(v => ((binding.DateFrom.HasValue && binding.DateTo.HasValue) ? (v.Date >= binding.DateFrom && v.Date <= binding.DateTo) : true)
+                && (binding.DoctorId.HasValue ? v.VisitServices.Select(vs => vs.Service.DoctorId).Contains(binding.DoctorId.Value) : true)
+                && (binding.VisitsId != null ? binding.VisitsId.Contains(v.Id) : true))
+               
                 .Select(selector).ToList();
         }
 

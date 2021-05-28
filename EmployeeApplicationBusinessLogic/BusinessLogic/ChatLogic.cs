@@ -40,6 +40,49 @@ namespace EmployeeApplicationBusinessLogic.BusinessLogic
             }).ToList();
         }
 
+        public List<UseOfMedicine> GetUseOfMedicineStatistic(ReportBindingModel reportBinding)
+        {
 
+            return _medicineDinamicStorage.GetFilteredList(new MedicineDinamicBindingModel
+            {
+                DateFrom = reportBinding.DateFrom,
+                DateTo = reportBinding.DateTo,
+                DoctorId = reportBinding.DoctorId
+            }).GroupBy(md => md.MedicineId).Select(gmd => new UseOfMedicine
+            {
+                MedicineName = gmd.First().MedicineName,
+                CountOfUse = gmd.SelectMany(d => new List<int> { d.Count }).ToList(),
+                Date = gmd.SelectMany(d => new List<DateTime> { d.Date }).ToList()
+            }).ToList();
+        }
+
+        public List<UseOfThingViewModel> GetUseOfServicesStatistic(ReportBindingModel reportBinding)
+        {
+
+            var list = _visitStorage.GetFilteredList(new VisitBindingModel
+            {
+                DateFrom = reportBinding.DateFrom,
+                DateTo = reportBinding.DateTo,
+                DoctorId = reportBinding.DoctorId
+            }).Select(v => v.Services.Values).ToList();
+
+
+            var servisesList = new List<string>();
+
+            foreach (var servise in list)
+            {
+                foreach (var item in servise)
+                {
+                    if(item.doctorId == reportBinding.DoctorId)
+                    servisesList.Add(item.serviceName);
+                }
+            }
+
+            return servisesList.GroupBy(s => s).Select(gv => new UseOfThingViewModel
+            {
+                Count = gv.Count(),
+                ThingName = gv.First()
+            }).ToList();
+        }
     }
 }

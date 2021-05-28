@@ -55,6 +55,37 @@ namespace EmployeeApplicationBusinessLogic.BusinessLogic
 
         public List<ReportServiceAnimalViewModel> GetServiceAnimals (ReportBindingModel reportBinding)
         {
+            var reportDataList = new List<ReportServiceAnimalViewModel>();
+            var servicesList = _serviceStorage.GetFilteredList(new ServiceBindingModel
+            {
+                DoctorId = reportBinding.DoctorId,
+                ServicesId = reportBinding.ServicesId
+            });
+
+            foreach (var service in servicesList)
+            {
+                var visitsList = _visitStorage.GetFilteredList(new VisitBindingModel { VisitsId = service.VisitsId });
+                foreach (var visit in visitsList)
+                {
+                    var client = _clientStorage.GetElement(new ClientBindingModel { Id = visit.ClientId });
+                    foreach (var animal in visit.Animals){
+                        reportDataList.Add(new ReportServiceAnimalViewModel
+                        {
+                            AnimalBreed = animal.Value.petBreed,
+                            AnimalName = animal.Value.petName,
+                            AnimalType = animal.Value.petType,
+                            ClientFirstName = client.FirstName,
+                            ClientLastName = client.LastName,
+                            ClientNickName = client.NickName,
+                            ServiceName = service.Name,
+                            Date = visit.Date
+                        });
+                    }
+                   
+                }           
+            }
+            return reportDataList;
+            /*
             var finalReport = new List<ReportServiceAnimalViewModel>();
 
             var visits = _visitStorage.GetFullList();
@@ -97,7 +128,7 @@ namespace EmployeeApplicationBusinessLogic.BusinessLogic
                     }
                 }
             }
-            return finalReport;
+            return finalReport;*/
         }
 
         public void SaveToWordFile(ReportBindingModel binding)

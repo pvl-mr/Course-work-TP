@@ -10,6 +10,7 @@ namespace EmployeeApplicationBusinessLogic.BindingModels
         public string Description { get; set; }
         public int DoctorId { get; set; }
 
+        public List<int> ServicesId { get; set; }
         public virtual Dictionary<int, (string name, string description)> Medicines { get; set; }
     }
 }

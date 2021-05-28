@@ -16,5 +16,10 @@ namespace EmployeeApplicationBusinessLogic.BindingModels
 
         public List<int> AnimalIds { get; set; }
 
+        public List<int> VisitsId { get; set; }
+
+        public DateTime? DateFrom { get; set; }
+        public DateTime? DateTo { get; set; }
+        public int? DoctorId { get; set; }
     }
 }

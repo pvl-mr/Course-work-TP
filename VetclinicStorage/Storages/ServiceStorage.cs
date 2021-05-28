@@ -20,6 +20,7 @@ namespace VetclinicStorage.Storages
                 Description = s.Description,
                 Name = s.Name,
                 DoctorId = s.DoctorId,
+                VisitsId = s.VisitServices.Select(vs => vs.VisitId).ToList(),
                 Medicines = s.ServiceMedicines.ToDictionary(sm => sm.MedicineId, sm => (sm.Medicine.Name, sm.Medicine.Description))
             };
         }
@@ -33,14 +34,17 @@ namespace VetclinicStorage.Storages
         {
             return context.Services.Where(s => (s.Id == binding.Id && s.DoctorId == binding.DoctorId) 
                 || (string.IsNullOrEmpty(binding.Name) == false && s.Name == binding.Name))
-              .Include(s => s.ServiceMedicines).ThenInclude(sm => sm.Medicine)          
+              .Include(s => s.ServiceMedicines).ThenInclude(sm => sm.Medicine).
+              Include(s => s.VisitServices)
               .SingleOrDefault();
         }
 
         protected override List<ServiceViewModel> GetFilteredList(ServiceBindingModel binding, VetclinicDbContext context)
         {
-            return context.Services.Where(s => s.DoctorId == binding.DoctorId)
+            return context.Services.Where(s => s.DoctorId == binding.DoctorId 
+            && (binding.ServicesId != null ? binding.ServicesId.Contains(s.Id) : true))
              .Include(s => s.ServiceMedicines).ThenInclude(sm => sm.Medicine)
+             .Include(s => s.VisitServices)
              .Select(selector).ToList();
         }
 
@@ -48,6 +52,7 @@ namespace VetclinicStorage.Storages
         {
             return context.Services
             .Include(s => s.ServiceMedicines).ThenInclude(sm => sm.Medicine)
+            .Include(s => s.VisitServices)
             .Select(selector).ToList();
         }
 

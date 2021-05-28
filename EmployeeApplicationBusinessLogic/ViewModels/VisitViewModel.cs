@@ -14,8 +14,8 @@ namespace EmployeeApplicationBusinessLogic.ViewModels
         [DisplayName("Ваш комментарий")]
         public string Comment { get; set; }
 
-        public Dictionary<int, (string petName, string petBreed)> Animals;
-        public Dictionary<int, (string serviceName, string description)> Services;
+        public Dictionary<int, (string petName, string petBreed, string petType)> Animals;
+        public Dictionary<int, (string serviceName, string description, int doctorId)> Services;
 
         public int ClientId { get; set; }
     }

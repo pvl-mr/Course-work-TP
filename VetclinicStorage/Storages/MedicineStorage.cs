@@ -10,16 +10,9 @@ namespace VetclinicStorage.Storages
     public class MedicineStorage : EntityStorage<MedicineViewModel, MedicineBindingModel, Medicine>
     {
         private Func<Medicine, MedicineViewModel> selector;
-        private Func<Visit, VisitViewModel> selector2;
+     
         public MedicineStorage() 
-        {
-            selector2 = v => new VisitViewModel
-            {
-
-                Animals = v.VisitAnimals.ToDictionary(va => va.AnimalId, va => (va.Animal.Name, va.Animal.Breed)),
-                Services = v.VisitServices.ToDictionary(vs => vs.ServiceId, vs => (vs.Service.Name, vs.Service.Description)),
-
-            };
+        {       
             selector = m => new MedicineViewModel { Id = m.Id, Name = m.Name, Description = m.Description };      
         }
 
